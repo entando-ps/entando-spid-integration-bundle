@@ -1,0 +1,31 @@
+descriptorVersion: v4
+image: jangalian/spid-bundle:0.0.1-SNAPSHOT
+dbms: postgresql
+healthCheckPath: "/management/health"
+roles:
+  - "spid-admin"
+ingressPath: "/spid"
+permissions:
+    - clientId: realm-management
+      role: manage-users
+    - clientId: realm-management
+      role: view-users
+environmentVariables:
+    - name: SPID_CONFIG_ACTIVE
+      value: "true"
+    - name: KEYCLOACK_HOST
+      valueFrom:
+          secretKeyRef:
+              name: f6923300-sso-url
+              key: url
+    - name: KEYCLOACK_USERNAME
+      valueFrom:
+          secretKeyRef:
+              name: f6923300-sso-admin-username
+              key: username
+    - name: KEYCLOACK_PASSWORD
+      valueFrom:
+          secretKeyRef:
+              name: f6923300-sso-admin-password
+              key: password
+

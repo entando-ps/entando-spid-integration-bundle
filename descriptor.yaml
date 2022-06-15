@@ -1,0 +1,13 @@
+code: SPID bundle
+description: Autenticazione SPID
+
+components:
+  plugins:
+    - plugins/spid-plugin.yaml
+
+#  widgets:
+#    - ui/widgets/spid/tableWidget/spid-table-widget-descriptor.yaml
+#    - ui/widgets/spid/detailsWidget/spid-details-widget-descriptor.yaml
+#    - ui/widgets/spid/formWidget/spid-form-widget-descriptor.yaml
+# entando-needle-descriptor-add-widgets - Entando blueprint will add widget bundle files here
+
