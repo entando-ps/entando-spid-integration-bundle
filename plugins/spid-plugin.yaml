@@ -16,16 +16,16 @@ environmentVariables:
     - name: KEYCLOACK_HOST
       valueFrom:
           secretKeyRef:
-              name: 8fba3c48-sso-url
+              name: ad14e819-sso-url
               key: url
     - name: KEYCLOACK_USERNAME
       valueFrom:
           secretKeyRef:
-              name: 8fba3c48-sso-admin-username
+              name: ad14e819-sso-admin-username
               key: username
     - name: KEYCLOACK_PASSWORD
       valueFrom:
           secretKeyRef:
-              name: 8fba3c48-sso-admin-password
+              name: ad14e819-sso-admin-password
               key: password
 
