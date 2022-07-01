@@ -11,11 +11,11 @@ environmentVariables:
     - name: KEYCLOACK_USERNAME
       valueFrom:
           secretKeyRef:
-              name: ee0a0872-sso-admin-username
+              name: ad14e819-sso-admin-username
               key: username
     - name: KEYCLOACK_PASSWORD
       valueFrom:
           secretKeyRef:
-              name: ee0a0872-sso-admin-password
+              name: ad14e819-sso-admin-password
               key: password
 
