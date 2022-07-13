@@ -3,7 +3,7 @@ image: jangalian/spid-bundle:0.1.5
 dbms: postgresql
 healthCheckPath: "/management/health"
 roles:
-  - "spid-admin"
+  - "realm-admin"
 ingressPath: "/spid"
 environmentVariables:
     - name: SPID_CONFIG_ACTIVE
@@ -13,13 +13,13 @@ environmentVariables:
 #    - name: KEYCLOAK_CLIENT_ID
 #      valueFrom:
 #          secretKeyRef:
-#              name: ad14e819-sso-admin-username
-#              key: username
+#              name: ad14e819-client-id
+#              key: id
     - name: KEYCLOAK_CLIENT_SECRET
       valueFrom:
           secretKeyRef:
-              name: ad14e819-sso-admin-password
-              key: password
+              name: ad14e819-client-secret
+              key: secret
 
 
 
