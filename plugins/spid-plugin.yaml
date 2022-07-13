@@ -1,5 +1,5 @@
 descriptorVersion: v4
-image: jangalian/spid-bundle:0.1.7
+image: jangalian/spid-bundle:0.1.8
 dbms: postgresql
 healthCheckPath: "/management/health"
 roles:
@@ -10,7 +10,7 @@ environmentVariables:
       value: "true"
 #    - name: KEYCLOAK_PROTO
 #      value: "http"
-#    - name: KEYCLOAK_CLIENT_ID
+#    - name: KEYCLOAK_SPID_CLIENT_ID
 #      valueFrom:
 #          secretKeyRef:
 #              name: ad14e819-client-id
