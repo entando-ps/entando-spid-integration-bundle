@@ -1,5 +1,5 @@
 descriptorVersion: v4
-image: jangalian/spid-bundle:0.1.3
+image: jangalian/spid-bundle:0.1.5
 dbms: postgresql
 healthCheckPath: "/management/health"
 roles:
@@ -8,14 +8,18 @@ ingressPath: "/spid"
 environmentVariables:
     - name: SPID_CONFIG_ACTIVE
       value: "true"
-    - name: KEYCLOACK_USERNAME
-      valueFrom:
-          secretKeyRef:
-              name: ad14e819-sso-admin-username
-              key: username
-    - name: KEYCLOACK_PASSWORD
+#    - name: KEYCLOAK_PROTO
+#      value: "http"
+#    - name: KEYCLOAK_CLIENT_ID
+#      valueFrom:
+#          secretKeyRef:
+#              name: ad14e819-sso-admin-username
+#              key: username
+    - name: KEYCLOAK_CLIENT_SECRET
       valueFrom:
           secretKeyRef:
               name: ad14e819-sso-admin-password
               key: password
+
+
 
