@@ -1,5 +1,5 @@
 descriptorVersion: v4
-image: jangalian/spid-bundle:0.1.8
+image: jangalian/spid-bundle:0.1.9
 dbms: postgresql
 healthCheckPath: "/management/health"
 roles:
@@ -7,6 +7,8 @@ roles:
 ingressPath: "/spid"
 environmentVariables:
     - name: SPID_CONFIG_ACTIVE
+      value: "true"
+    - name: KEYCLOAK_MAP_JWT
       value: "true"
 #    - name: KEYCLOAK_PROTO
 #      value: "http"
