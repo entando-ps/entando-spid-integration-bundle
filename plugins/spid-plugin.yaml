@@ -42,7 +42,7 @@ environmentVariables:
     - name: OTHER_CONTACT_VAT_NUMBER
       value: "IT03264290929"
     - name: OTHER_CONTACT_FISCAL_CODE
-      value:
+      value: ""
 #
 # CHANGE TO "FALSE" FOR PUBLIC ADMINISTRATIONS
 #
