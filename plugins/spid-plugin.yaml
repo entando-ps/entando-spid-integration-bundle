@@ -47,7 +47,7 @@ environmentVariables:
 # CHANGE TO "FALSE" FOR PUBLIC ADMINISTRATIONS
 #
     - name: OTHER_CONTACT_IS_SP_PRIVATE
-       value: "true"
+      value: "true"
 #
 # FOR PRIVATE SP ONLY
 #
