@@ -20,7 +20,7 @@ environmentVariables:
     - name: KEYCLOAK_CLIENT_SECRET
       valueFrom:
           secretKeyRef:
-              name: c0a4c5e6-client-secret
+              name: ad14e819-client-secret
               key: secret
 
 #
