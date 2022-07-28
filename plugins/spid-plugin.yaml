@@ -1,5 +1,5 @@
 descriptorVersion: v4
-image: jangalian/idp-bundle:0.1.12
+image: entandopshq/spid-bundle:1.0.0
 dbms: postgresql
 healthCheckPath: "/management/health"
 roles:
@@ -9,7 +9,7 @@ environmentVariables:
     - name: SPID_CONFIG_ACTIVE
       value: "true"
     - name: KEYCLOAK_MAP_JWT
-      value: "true"
+      value: "false"
 #    - name: KEYCLOAK_PROTO
 #      value: "http"
 #    - name: KEYCLOAK_SPID_CLIENT_ID
@@ -20,11 +20,11 @@ environmentVariables:
     - name: KEYCLOAK_CLIENT_SECRET
       valueFrom:
           secretKeyRef:
-              name: ad14e819-client-secret
+              name: c0a4c5e6-client-secret
               key: secret
 
 #
-# ORGANIZATION DATA
+# COMMON ORGANIZATION DATA
 #
 
     - name: ORGANIZATION_NAMES
@@ -48,6 +48,12 @@ environmentVariables:
 #
     - name: OTHER_CONTACT_IS_SP_PRIVATE
       value: "true"
+
+#
+# FOR (ITALIAN) PUBLIC SP ONLY
+#
+    - name: OTHER_CONTACT_IPA_CODE
+      value: ""
 #
 # FOR PRIVATE SP ONLY
 #
