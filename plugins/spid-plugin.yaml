@@ -1,81 +1,70 @@
 descriptorVersion: v4
-image: jangalian/spid-bundle:1.0.4
+image: entandopsdh/spid-bundle:1.0.0
 dbms: postgresql
 healthCheckPath: "/management/health"
 roles:
-  - "realm-admin"
+    - "spid-admin"
+permissions:
+    - clientId: realm-management
+      role: realm-admin
 ingressPath: "/spid"
 environmentVariables:
-  - name: SPID_CONFIG_ACTIVE
-    value: "true"
-  - name: KEYCLOAK_MAP_JWT
-    value: "false"
-  #    - name: KEYCLOAK_PROTO
-  #      value: "http"
-  #    - name: KEYCLOAK_SPID_CLIENT_ID
-  #      valueFrom:
-  #          secretKeyRef:
-  #              name: ad14e819-client-id
-  #              key: id
-  - name: KEYCLOAK_CLIENT_SECRET
-    valueFrom:
-      secretKeyRef:
-        name: c0a4c5e6-client-secret
-        key: secret
+    - name: SPID_CONFIG_ACTIVE
+      value: "true"
 
-  #
-  # COMMON ORGANIZATION DATA
-  #
 
-  - name: ORGANIZATION_NAMES
-    value: "en|Entando, it|Entando"
-  - name: ORGANIZATION_DISPLAY_NAMES
-    value: "en|Entando, it|Entando"
-  - name: ORGANIZATION_URLS
-    value: "it|https://forumpa.apps.psdemo.eng-entando.com/entando-de-app/, en|https://forumpa.apps.psdemo.eng-entando.com/entando-de-app/"
-  - name: OTHER_CONTACT_COMPANY
-    value: "Entando"
-  - name: OTHER_CONTACT_PHONE
-    value: "+395556935632"
-  - name: OTHER_CONTACT_EMAIL
-    value: "bastachesia@gmail.com"
-  - name: OTHER_CONTACT_VAT_NUMBER
-    value: "IT03264290929"
-  - name: OTHER_CONTACT_FISCAL_CODE
-    value: ""
-  #
-  # CHANGE TO "FALSE" FOR PUBLIC ADMINISTRATIONS
-  #
-  - name: OTHER_CONTACT_IS_SP_PRIVATE
-    value: "true"
+    #
+    # COMMON ORGANIZATION DATA
+    #
 
-  #
-  # FOR (ITALIAN) PUBLIC SP ONLY
-  #
-  - name: OTHER_CONTACT_IPA_CODE
-    value: ""
-  #
-  # FOR PRIVATE SP ONLY
-  #
-  - name: BILLING_CONTACT_COMPANY
-    value: "Entando"
-  - name: BILLING_CONTACT_PHONE
-    value: "+395556935632"
-  - name: BILLING_CONTACT_EMAIL
-    value: "bastachesia@gmail.com"
-  - name: BILLING_CONTACT_REGISTRY_NAME
-    value: "Entando"
-  - name: BILLING_CONTACT_SITE_ADDRESS
-    value: "Piazza Salento"
-  - name: BILLING_CONTACT_SITE_NUMBER
-    value: "9"
-  - name: BILLING_CONTACT_SITE_CITY
-    value: "CA"
-  - name: BILLING_CONTACT_SITE_ZIP_CODE
-    value: "09127"
-  - name: BILLING_CONTACT_SITE_PROVINCE
-    value: "Cagliari"
-  - name: BILLING_CONTACT_SITE_COUNTRY
-    value: "IT"
+    - name: ORGANIZATION_NAMES
+      value: "en|Entando, it|Entando"
+    - name: ORGANIZATION_DISPLAY_NAMES
+      value: "en|Entando, it|Entando"
+    - name: ORGANIZATION_URLS
+      value: "it|https://forumpa.apps.psdemo.eng-entando.com/entando-de-app/, en|https://forumpa.apps.psdemo.eng-entando.com/entando-de-app/"
+    - name: OTHER_CONTACT_COMPANY
+      value: "Entando"
+    - name: OTHER_CONTACT_PHONE
+      value: "+395556935632"
+    - name: OTHER_CONTACT_EMAIL
+      value: "bastachesia@gmail.com"
+    - name: OTHER_CONTACT_VAT_NUMBER
+      value: "IT03264290929"
+    - name: OTHER_CONTACT_FISCAL_CODE
+      value: ""
+    #
+    # CHANGE TO "FALSE" FOR PUBLIC ADMINISTRATIONS
+    #
+    - name: OTHER_CONTACT_IS_SP_PRIVATE
+      value: "true"
 
+    #
+    # FOR (ITALIAN) PUBLIC SP ONLY
+    #
+    - name: OTHER_CONTACT_IPA_CODE
+      value: ""
+    #
+    # FOR PRIVATE SP ONLY
+    #
+    - name: BILLING_CONTACT_COMPANY
+      value: "Entando"
+    - name: BILLING_CONTACT_PHONE
+      value: "+395556935632"
+    - name: BILLING_CONTACT_EMAIL
+      value: "bastachesia@gmail.com"
+    - name: BILLING_CONTACT_REGISTRY_NAME
+      value: "Entando"
+    - name: BILLING_CONTACT_SITE_ADDRESS
+      value: "Piazza Salento"
+    - name: BILLING_CONTACT_SITE_NUMBER
+      value: "9"
+    - name: BILLING_CONTACT_SITE_CITY
+      value: "Cagliari"
+    - name: BILLING_CONTACT_SITE_ZIP_CODE
+      value: "09127"
+    - name: BILLING_CONTACT_SITE_PROVINCE
+      value: "CA"
+    - name: BILLING_CONTACT_SITE_COUNTRY
+      value: "IT"
 
