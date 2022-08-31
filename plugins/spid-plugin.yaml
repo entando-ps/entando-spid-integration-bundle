@@ -2,6 +2,8 @@ descriptorVersion: v4
 image: jangalian/spid-bundle:1.0.6
 dbms: postgresql
 healthCheckPath: "/management/health"
+roles:
+    - "spid-admin"
 permissions:
     - clientId: realm-management
       role: realm-admin
