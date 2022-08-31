@@ -1,25 +1,14 @@
 descriptorVersion: v4
-image: jangalian/spid-bundle:1.0.5
+image: jangalian/spid-bundle:1.0.6
 dbms: postgresql
 healthCheckPath: "/management/health"
-roles:
-  - "realm-admin"
+permissions:
+    - clientId: realm-management
+      role: realm-admin
 ingressPath: "/spid"
 environmentVariables:
     - name: SPID_CONFIG_ACTIVE
       value: "true"
-#    - name: KEYCLOAK_PROTO
-#      value: "http"
-#    - name: KEYCLOAK_SPID_CLIENT_ID
-#      valueFrom:
-#          secretKeyRef:
-#              name: ad14e819-client-id
-#              key: id
-    - name: KEYCLOAK_CLIENT_SECRET
-      valueFrom:
-          secretKeyRef:
-              name: ad14e819-client-secret
-              key: secret
 
 #
 # COMMON ORGANIZATION DATA
