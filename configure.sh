@@ -1,0 +1,76 @@
+#!/bin/bash
+
+#
+# Organization properties
+#
+
+_ORGANIZATION_NAMES="en|Entando, it|Entando"
+_ORGANIZATION_DISPLAY_NAMES="en|Entando, it|Entando"
+_ORGANIZATION_URLS="it|https://forumpa.apps.psdemo.eng-entando.com/entando-de-app/, en|https://forumpa.apps.psdemo.eng-entando.com/entando-de-app/"
+_OTHER_CONTACT_COMPANY="Entando"
+_OTHER_CONTACT_PHONE="+395556935632"
+_OTHER_CONTACT_EMAIL="bastachesia@gmail.com"
+_OTHER_CONTACT_VAT_NUMBER="IT03264290929"
+_OTHER_CONTACT_FISCAL_CODE=""
+
+#
+# CHANGE TO "FALSE" FOR PUBLIC ADMINISTRATIONS
+#
+
+_OTHER_CONTACT_IS_SP_PRIVATE="true"
+
+#
+# FOR (ITALIAN) PUBLIC SP ONLY
+#
+
+_OTHER_CONTACT_IPA_CODE=""
+
+#
+# FOR PRIVATE SP ONLY
+#
+
+_BILLING_CONTACT_COMPANY="Entando"
+_BILLING_CONTACT_PHONE="+395556935632"
+_BILLING_CONTACT_EMAIL="bastachesia@gmail.com"
+_BILLING_CONTACT_REGISTRY_NAME="Entando"
+_BILLING_CONTACT_SITE_ADDRESS="Piazza Salento"
+_BILLING_CONTACT_SITE_NUMBER="9"
+_BILLING_CONTACT_SITE_CITY="Cagliari"
+_BILLING_CONTACT_SITE_ZIP_CODE="09127"
+_BILLING_CONTACT_SITE_PROVINCE="CA"
+_BILLING_CONTACT_SITE_COUNTRY="IT"
+
+#
+# Configuration end
+#
+
+
+if [ $# -eq 0 ]
+  then
+    echo "***"
+    echo "*** No namespace supplied!"
+    echo "***"
+    exit 1
+fi
+
+ent k create secret generic c0a4c5e6-SPID-configuration --from-literal=_ORGANIZATION_NAMES=\""${_ORGANIZATION_NAMES}"\"  \
+--from-literal=_ORGANIZATION_DISPLAY_NAMES=\""${_ORGANIZATION_DISPLAY_NAMES}"\" \
+--from-literal=_ORGANIZATION_URLS=\""${_ORGANIZATION_URLS}"\" \
+--from-literal=_OTHER_CONTACT_COMPANY=\""${_OTHER_CONTACT_COMPANY}"\" \
+--from-literal=_OTHER_CONTACT_PHONE=\""${_OTHER_CONTACT_PHONE}"\" \
+--from-literal=_OTHER_CONTACT_EMAIL=\""${_OTHER_CONTACT_EMAIL}"\" \
+--from-literal=_OTHER_CONTACT_VAT_NUMBER=\""${_OTHER_CONTACT_VAT_NUMBER}"\" \
+--from-literal=_OTHER_CONTACT_FISCAL_CODE=\""${_OTHER_CONTACT_FISCAL_CODE}"\" \
+--from-literal=_OTHER_CONTACT_IS_SP_PRIVATE=\""${_OTHER_CONTACT_IS_SP_PRIVATE}"\" \
+--from-literal=_OTHER_CONTACT_IPA_CODE=\""${_OTHER_CONTACT_IPA_CODE}"\" \
+--from-literal=_BILLING_CONTACT_COMPANY=\""${_BILLING_CONTACT_COMPANY}"\" \
+--from-literal=_BILLING_CONTACT_PHONE=\""${_BILLING_CONTACT_PHONE}"\" \
+--from-literal=_BILLING_CONTACT_EMAIL=\""${_BILLING_CONTACT_EMAIL}"\" \
+--from-literal=_BILLING_CONTACT_REGISTRY_NAME=\""${_BILLING_CONTACT_REGISTRY_NAME}"\" \
+--from-literal=_BILLING_CONTACT_SITE_ADDRESS=\""${_BILLING_CONTACT_SITE_ADDRESS}"\" \
+--from-literal=_BILLING_CONTACT_SITE_NUMBER=\""${_BILLING_CONTACT_SITE_NUMBER}"\" \
+--from-literal=_BILLING_CONTACT_SITE_CITY=\""${_BILLING_CONTACT_SITE_CITY}"\" \
+--from-literal=_BILLING_CONTACT_SITE_ZIP_CODE=\""${_BILLING_CONTACT_SITE_ZIP_CODE}"\" \
+--from-literal=_BILLING_CONTACT_SITE_PROVINCE=\""${_BILLING_CONTACT_SITE_PROVINCE}"\" \
+--from-literal=_BILLING_CONTACT_SITE_COUNTRY=\""${_BILLING_CONTACT_SITE_COUNTRY}"\" \
+-n "$1"
