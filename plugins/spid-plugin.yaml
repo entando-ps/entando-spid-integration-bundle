@@ -1,5 +1,5 @@
 descriptorVersion: v4
-image: jangalian/spid-bundle:1.0.7
+image: jangalian/spid-bundle:1.2.0
 dbms: postgresql
 healthCheckPath: "/management/health"
 roles:
