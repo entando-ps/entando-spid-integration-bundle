@@ -4,7 +4,7 @@
 # Secret name
 #
 
-BUNDLE_ID=c0a4c5e6
+BUNDLE_ID=c25ef94b
 
 #
 # Organization properties
