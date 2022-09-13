@@ -1,6 +1,6 @@
 descriptorVersion: v4
 image: jangalian/spid-bundle:1.2.8
-dbms: postgresql
+dbms: none
 healthCheckPath: "/management/health"
 roles:
     - "spid-admin"
@@ -12,59 +12,109 @@ environmentVariables:
     - name: SPID_CONFIG_ACTIVE
       value: "true"
 
+    -   name: OTHER_CONTACT_IS_SP_PRIVATE
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _OTHER_CONTACT_IS_SP_PRIVATE
 
-    #
-    # COMMON ORGANIZATION DATA
-    #
-
-    - name: ORGANIZATION_NAMES
-      value: "en|Entando, it|Entando"
-    - name: ORGANIZATION_DISPLAY_NAMES
-      value: "en|Entando, it|Entando"
-    - name: ORGANIZATION_URLS
-      value: "it|https://forumpa.apps.psdemo.eng-entando.com/entando-de-app/, en|https://forumpa.apps.psdemo.eng-entando.com/entando-de-app/"
-    - name: OTHER_CONTACT_COMPANY
-      value: "Entando"
-    - name: OTHER_CONTACT_PHONE
-      value: "+395556935632"
-    - name: OTHER_CONTACT_EMAIL
-      value: "bastachesia@gmail.com"
-    - name: OTHER_CONTACT_VAT_NUMBER
-      value: "IT03264290929"
-    - name: OTHER_CONTACT_FISCAL_CODE
-      value: ""
-    #
-    # CHANGE TO "FALSE" FOR PUBLIC ADMINISTRATIONS
-    #
-    - name: OTHER_CONTACT_IS_SP_PRIVATE
-      value: "true"
-
-    #
-    # FOR (ITALIAN) PUBLIC SP ONLY
-    #
-    - name: OTHER_CONTACT_IPA_CODE
-      value: ""
-    #
-    # FOR PRIVATE SP ONLY
-    #
-    - name: BILLING_CONTACT_COMPANY
-      value: "Entando"
-    - name: BILLING_CONTACT_PHONE
-      value: "+395556935632"
-    - name: BILLING_CONTACT_EMAIL
-      value: "bastachesia@gmail.com"
-    - name: BILLING_CONTACT_REGISTRY_NAME
-      value: "Entando"
-    - name: BILLING_CONTACT_SITE_ADDRESS
-      value: "Piazza Salento"
-    - name: BILLING_CONTACT_SITE_NUMBER
-      value: "9"
-    - name: BILLING_CONTACT_SITE_CITY
-      value: "Cagliari"
-    - name: BILLING_CONTACT_SITE_ZIP_CODE
-      value: "09127"
-    - name: BILLING_CONTACT_SITE_PROVINCE
-      value: "CA"
-    - name: BILLING_CONTACT_SITE_COUNTRY
-      value: "IT"
-
+    -   name: ORGANIZATION_NAMES
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _ORGANIZATION_NAMES
+    -   name: ORGANIZATION_DISPLAY_NAMES
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _ORGANIZATION_DISPLAY_NAMES
+    -   name: ORGANIZATION_URLS
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _ORGANIZATION_URLS
+    -   name: OTHER_CONTACT_COMPANY
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _OTHER_CONTACT_COMPANY
+    -   name: OTHER_CONTACT_PHONE
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _OTHER_CONTACT_PHONE
+    -   name: OTHER_CONTACT_EMAIL
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _OTHER_CONTACT_EMAIL
+    -   name: OTHER_CONTACT_VAT_NUMBER
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _OTHER_CONTACT_VAT_NUMBER
+    -   name: OTHER_CONTACT_FISCAL_CODE
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _OTHER_CONTACT_FISCAL_CODE
+    -   name: OTHER_CONTACT_IS_SP_PRIVATE
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _OTHER_CONTACT_IS_SP_PRIVATE
+    -   name: OTHER_CONTACT_IPA_CODE
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _OTHER_CONTACT_IPA_CODE
+    -   name: BILLING_CONTACT_COMPANY
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _BILLING_CONTACT_COMPANY
+    -   name: BILLING_CONTACT_PHONE
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _BILLING_CONTACT_PHONE
+    -   name: BILLING_CONTACT_EMAIL
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _BILLING_CONTACT_EMAIL
+    -   name: BILLING_CONTACT_REGISTRY_NAME
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _BILLING_CONTACT_REGISTRY_NAME
+    -   name: BILLING_CONTACT_SITE_ADDRESS
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _BILLING_CONTACT_SITE_ADDRESS
+    -   name: BILLING_CONTACT_SITE_NUMBER
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _BILLING_CONTACT_SITE_NUMBER
+    -   name: BILLING_CONTACT_SITE_CITY
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _BILLING_CONTACT_SITE_CITY
+    -   name: BILLING_CONTACT_SITE_ZIP_CODE
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _BILLING_CONTACT_SITE_ZIP_CODE
+    -   name: BILLING_CONTACT_SITE_PROVINCE
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _BILLING_CONTACT_SITE_PROVINCE
+    -   name: BILLING_CONTACT_SITE_COUNTRY
+        valueFrom:
+            secretKeyRef:
+                name: c0a4c5e6-SPID-configuration
+                key: _BILLING_CONTACT_SITE_COUNTRY
