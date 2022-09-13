@@ -15,106 +15,106 @@ environmentVariables:
     -   name: OTHER_CONTACT_IS_SP_PRIVATE
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _OTHER_CONTACT_IS_SP_PRIVATE
 
     -   name: ORGANIZATION_NAMES
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _ORGANIZATION_NAMES
     -   name: ORGANIZATION_DISPLAY_NAMES
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _ORGANIZATION_DISPLAY_NAMES
     -   name: ORGANIZATION_URLS
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _ORGANIZATION_URLS
     -   name: OTHER_CONTACT_COMPANY
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _OTHER_CONTACT_COMPANY
     -   name: OTHER_CONTACT_PHONE
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _OTHER_CONTACT_PHONE
     -   name: OTHER_CONTACT_EMAIL
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _OTHER_CONTACT_EMAIL
     -   name: OTHER_CONTACT_VAT_NUMBER
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _OTHER_CONTACT_VAT_NUMBER
     -   name: OTHER_CONTACT_FISCAL_CODE
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _OTHER_CONTACT_FISCAL_CODE
     -   name: OTHER_CONTACT_IS_SP_PRIVATE
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _OTHER_CONTACT_IS_SP_PRIVATE
     -   name: OTHER_CONTACT_IPA_CODE
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _OTHER_CONTACT_IPA_CODE
     -   name: BILLING_CONTACT_COMPANY
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _BILLING_CONTACT_COMPANY
     -   name: BILLING_CONTACT_PHONE
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _BILLING_CONTACT_PHONE
     -   name: BILLING_CONTACT_EMAIL
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _BILLING_CONTACT_EMAIL
     -   name: BILLING_CONTACT_REGISTRY_NAME
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _BILLING_CONTACT_REGISTRY_NAME
     -   name: BILLING_CONTACT_SITE_ADDRESS
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _BILLING_CONTACT_SITE_ADDRESS
     -   name: BILLING_CONTACT_SITE_NUMBER
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _BILLING_CONTACT_SITE_NUMBER
     -   name: BILLING_CONTACT_SITE_CITY
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _BILLING_CONTACT_SITE_CITY
     -   name: BILLING_CONTACT_SITE_ZIP_CODE
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _BILLING_CONTACT_SITE_ZIP_CODE
     -   name: BILLING_CONTACT_SITE_PROVINCE
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _BILLING_CONTACT_SITE_PROVINCE
     -   name: BILLING_CONTACT_SITE_COUNTRY
         valueFrom:
             secretKeyRef:
-                name: c0a4c5e6-SPID-configuration
+                name: c0a4c5e6-spid-configuration
                 key: _BILLING_CONTACT_SITE_COUNTRY
