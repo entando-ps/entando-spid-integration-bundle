@@ -1,5 +1,5 @@
 descriptorVersion: v4
-image: entandopsdh/spid-bundle:1.0.0
+image: jangalian/spid-bundle:1.2.8
 dbms: postgresql
 healthCheckPath: "/management/health"
 roles:
