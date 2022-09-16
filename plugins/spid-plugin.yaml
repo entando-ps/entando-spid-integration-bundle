@@ -1,5 +1,5 @@
 descriptorVersion: v4
-image: jangalian/spid-bundle:1.2.8
+image: jangalian/spid-bundle:1.2.9
 dbms: none
 healthCheckPath: "/management/health"
 roles:
@@ -118,3 +118,8 @@ environmentVariables:
             secretKeyRef:
                 name: c25ef94b-spid-configuration
                 key: _BILLING_CONTACT_SITE_COUNTRY
+    -   name: OTHER_CONTACT_IPA_CODE
+        valueFrom:
+            secretKeyRef:
+                name: c25ef94b-spid-configuration
+                key: _OTHER_CONTACT_IPA_CODE
