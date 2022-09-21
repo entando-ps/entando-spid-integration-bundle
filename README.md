@@ -48,7 +48,7 @@ Run the following command to replace Keycloak image
 - For Keycloak community 15.1.x:
 ```shell
 ent k scale deploy default-sso-in-namespace-deployment --replicas=0
-ent k set image deployment/default-sso-in-namespace-deployment server-container=entandopsdh/
+ent k set image deployment/default-sso-in-namespace-deployment server-container=entandopsdh/spid-keycloak-theme:0.0.2
 ```
 
 - For Red HAT SSO 7:
@@ -83,7 +83,7 @@ Copy the **idp-template.jar** into the Keycloak using the command appropriate fo
 - Keycloak 15.1.x community edition:
 
 ```shell
-ent k cp bundle_src/idp-template.jar default-sso-in-namespace-deployment-aaabbbccc-dddee:/opt/jboss/keycloak/standalone/deployments
+ent k cp bundle/idp-template.jar default-sso-in-namespace-deployment-aaabbbccc-dddee:/opt/jboss/keycloak/standalone/deployments
 ```
 
 - Red HAT SSO 7:
