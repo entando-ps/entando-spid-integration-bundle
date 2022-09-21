@@ -1,6 +1,6 @@
 # SPID bundle
 
-This bundle configures Keycloak to use Italian SPID identity template.
+This bundle configures Keycloak to use Italian SPID identity provider.
 SPID (Sistema Pubblico di Identità Digitale) is a system used by Public Administrations and provate subject
 to authenticate a given user.
 
@@ -12,7 +12,7 @@ documentation](https://docs.italia.it/italia/idp/idp-regole-tecniche/it/stabile/
 
 Below the list of the Identity providers currently supported:
 
-| Name of the template         |
+| Name of the provider         |
 |------------------------------|
 | Aruba PEC S.p.A.             |
 | In.Te.S.A. S.p.A.            |
@@ -36,7 +36,7 @@ Before installing the bundle in production (or staging) we have two options:
 - modify the existing Keycloak installation
 
 **IMPORTANT!** Please be aware that in the latter case the Keycloak theme is not updated so the dynamic list of providers won't be available.  
-The default behaviour of Keycloak in this case is to show a separate button for each SPID identity template.
+The default behaviour of Keycloak in this case is to show a separate button for each SPID identity provider.
 
 ### Replace Keycloak image
 
@@ -67,7 +67,7 @@ ent k scale deploy default-sso-in-namespace-deployment --replicas=1
 
 This method is necessary when Keycloak image can't be replaced.
 
-#### Installing the SPID template in Keycloak manually
+#### Installing the SPID provider in Keycloak manually
 
 Locate the pod containing the Keycloak installation:
 
@@ -78,26 +78,26 @@ ent k get po -n <NAMESPACE> | grep default-sso-in-namespace-deployment | head -n
 ````
 where NAMESPACE is the namespace where Entando was installed to.
 
-Copy the **idp-template.jar** into the Keycloak using the command appropriate for your Keycloak installation:
+Copy the **spid-provider.jar** into the Keycloak using the command appropriate for your Keycloak installation:
 
 - Keycloak 15.1.x community edition:
 
 ```shell
-ent k cp bundle/idp-template.jar default-sso-in-namespace-deployment-aaabbbccc-dddee:/opt/jboss/keycloak/standalone/deployments
+ent k cp bundle/spid-provider.jar default-sso-in-namespace-deployment-aaabbbccc-dddee:/opt/jboss/keycloak/standalone/deployments
 ```
 
 - Red HAT SSO 7:
 
 ```shell
-ent k cp bundle/idp-template.jar default-sso-in-namespace-deployment-aaabbbccc-dddee:/opt/eap/standalone/deployments
+ent k cp bundle/spid-provider.jar default-sso-in-namespace-deployment-aaabbbccc-dddee:/opt/eap/standalone/deployments
 ```
 
 where `default-sso-in-namespace-deployment-aaabbbccc-dddee` is the name of the Keycloak pod.
 
-You have to wait a few instants to let Keycloak detect the new template and install it.
+You have to wait a few instants to let Keycloak detect the new provider and install it.
 
 The result of this operation is to add a new identity
-template, **SPID**, to the list of those already available. This template will be configured automatically when the bundle is installed.
+provider, **SPID**, to the list of those already available. This provider will be configured automatically when the bundle is installed.
 For this reason installing the bundle without these preliminary step will result in an error.
 
 #### Customization of the bundle
@@ -146,7 +146,7 @@ Password: **user**
 
 ### Organization properties
 
-Organization properties are replicated for every identity template known by the installer.
+Organization properties are replicated for every identity provider known by the installer.
 
 Below the list of the fields shared between private organizations and public administrations:
 
