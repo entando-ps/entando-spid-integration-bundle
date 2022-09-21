@@ -1,5 +1,5 @@
 descriptorVersion: v4
-image: entandopsdh/spid-bundle:1.0.1
+image: entandopsdh/spid-bundle:1.0.2
 dbms: none
 healthCheckPath: "/management/health"
 roles:
