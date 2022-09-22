@@ -132,16 +132,16 @@ and demand an external authenticated client to start the configuration process.
 
 Below the list of the currently supported API:
 
-| Name      | Endpoint                                                              | Type | Description                                                                                                                                                                                                |
-|-----------|-----------------------------------------------------------------------|------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Configure | [/api/spid/configure](http://localhost:8081/api/spid/configure)       | POST | Start the configuration process                                                                                                                                                                            | 
-| Revert    | [/api/spid/revert](http://localhost:8081/api/spid/revert)             | POST | Revert the configuration                                                                                                                                                                                   |
-| Status    | [/api/spid/status](http://localhost:8081/api/spid/status)             | GET  | Get the status: if "installed" is true then <br/> the configuration is effective. Remaining fields are the list of providers configured and <br/> whether the custom authentication flow is present or not |
-| Status    | [/api/spid/organization](http://localhost:8081/api/spid/organization) | GET  | Get the actual Organization properties used for the configuration (or that will be used for the configuration)                                                                                             |
-| Status    | [/api/spid/organization](http://localhost:8081/api/spid/organization) | POST | Set the organization properties that will be used for the configuration process                                                                                                                            |
+| Name         | Endpoint                                                              | Type | Description                                                                                                                                                                                                |
+|--------------|-----------------------------------------------------------------------|------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Configure    | [/api/spid/configure](http://localhost:8081/api/spid/configure)       | POST | Start the configuration process                                                                                                                                                                            | 
+| Revert       | [/api/spid/revert](http://localhost:8081/api/spid/revert)             | POST | Revert the configuration                                                                                                                                                                                   |
+| Status       | [/api/spid/status](http://localhost:8081/api/spid/status)             | GET  | Get the status: if "installed" is true then <br/> the configuration is effective. Remaining fields are the list of providers configured and <br/> whether the custom authentication flow is present or not |
+| organization | [/api/spid/organization](http://localhost:8081/api/spid/organization) | GET  | Get the actual Organization properties used for the configuration (or that will be used for the configuration)                                                                                             |
+| organization | [/api/spid/organization](http://localhost:8081/api/spid/organization) | POST | Set the organization properties that will be used for the configuration process                                                                                                                            |
 
 
-For more detailed information access the swagger browser in the [local development environment](http://localhost:8081/swagger-ui/): keep the default client ID and secret and, when requested, use the following credentials on the standard login (not the SPID one!):
+For more detailed information access the swagger browser in the [local development environment](http://localhost:8081/swagger-ui/): keep the default client ID and secret and, when requested, use the following credentials on the standard login (not the SPID one!):  
 
 Username: **admin**  
 Password: **admin**
